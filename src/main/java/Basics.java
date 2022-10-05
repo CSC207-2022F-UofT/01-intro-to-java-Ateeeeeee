@@ -9,6 +9,8 @@
 
 import javax.management.monitor.StringMonitor;
 
+import static org.junit.Assert.assertEquals;
+
 /**
  *  1. In Java, no code can exist outside of a class. Unlike Python which uses
  *    functions, all code in Java uses methods.
@@ -170,6 +172,7 @@ public class Basics {
      * @param arr    An array of integers
      * @return       The sum of all integers at odd indices in arr
      */
+
     public static int oddSum(int[] arr) {
         int current_sum = 0;
 
@@ -179,8 +182,10 @@ public class Basics {
          *                You can index into arrays as we do in Python
          *                (e.g. arr[i] gives you the item at index i).
          */
-        for (int i = 0; i <= arr.length; i = i + 2) {
-            current_sum += arr[i];
+        for (int i = 1; i < arr.length; i += 1) {
+            if (i%2 == 1) {
+                current_sum += arr[i];
+            }
         }
         return current_sum;
     }
